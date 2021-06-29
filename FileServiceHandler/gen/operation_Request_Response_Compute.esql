@@ -1,0 +1,16 @@
+BROKER SCHEMA gen
+DECLARE ns1 NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+DECLARE ns NAMESPACE 'http://FileServiceHandler';
+
+
+CREATE COMPUTE MODULE operation_Request_Response_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		DECLARE filenama CHARACTER InputLocalEnvironment.File.Name;
+		
+		SET OutputRoot.XMLNS.ns:NovoClienteResponse.outputMessage = InputRoot.XMLNSC.ns:NovoCliente.inputMessage;
+		
+		RETURN TRUE;
+	END;
+END MODULE;

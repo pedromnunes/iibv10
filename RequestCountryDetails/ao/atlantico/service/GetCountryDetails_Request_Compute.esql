@@ -1,0 +1,23 @@
+BROKER SCHEMA ao.atlantico.service
+
+DECLARE ns158 NAMESPACE 'http://www.oorsprong.org/websamples.countryinfo';
+DECLARE ns NAMESPACE 'http://RequestCountryDetails';
+
+CREATE COMPUTE MODULE GetCountryDetails_Request_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+	
+		DECLARE isoCode CHARACTER '';
+		DECLARE city CHARACTER '';
+		
+		SET isoCode = InputRoot.XMLNSC.ns:GetCountryResponse.countryResponse.ISOCode;
+		
+	    SET OutputRoot.SOAP.Body.ns158:CapitalCity.ns158:sCountryISOCode = isoCode;
+	    SET city = Environment.Variables.oper;
+	    
+	    --SET OutputLocalEnvironment.Destination.SOAP.Request.Operation = 'validateIBAN';
+		--SET OutputLocalEnvironment.Destination.SOAP.Request.Transport.HTTP.WebServiceURL = address;
+	    
+		RETURN TRUE;
+	END;
+END MODULE;

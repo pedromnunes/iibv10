@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="GetGender" targetNamespace="http://GetGender" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://GetGender" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="GetGenderHttpBinding" originalBindingStyle="document"/>
+        <generatedXSD location="GetGender_InlineSchema1.xsd"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  
+  
+  <wsdl:types>
+    
+        <xsd:schema targetNamespace="http://GetGender" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+      <xsd:include schemaLocation="GetGender_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="operGetGenderRequestMsg">
+    <wsdl:part element="tns:operGetGender" name="operGetGenderParameters"/>
+  </wsdl:message>
+  <wsdl:message name="operGetGenderResponseMsg">
+    <wsdl:part element="tns:operGetGenderResponse" name="operGetGenderResult"/>
+  </wsdl:message>
+  <wsdl:portType name="GetGender">
+    <wsdl:operation name="operGetGender">
+      <wsdl:input message="tns:operGetGenderRequestMsg" name="operGetGenderRequest"/>
+      <wsdl:output message="tns:operGetGenderResponseMsg" name="operGetGenderResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetGenderHttpBinding" type="tns:GetGender">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="operGetGender">
+      <soap:operation soapAction="http://GetGender/operGetGender"/>
+      <wsdl:input name="operGetGenderRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="operGetGenderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    </wsdl:binding>
+  <wsdl:service name="GetGenderHttpService">
+    <wsdl:port binding="tns:GetGenderHttpBinding" name="GetGenderHttpPort">
+      <soap:address location="http://localhost:7800/GetGender"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

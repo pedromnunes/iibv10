@@ -1,0 +1,12 @@
+BROKER SCHEMA ao.atlantico.judgenumber
+
+
+CREATE COMPUTE MODULE IsPar_True
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		SET OutputRoot.XMLNSC.ns:IsParResponse.Message = CAST((InputRoot.XMLNSC.ns:IsPar.Number) AS CHARACTER) || ' é um número Par';
+		RETURN TRUE;
+		
+	END;
+END MODULE;

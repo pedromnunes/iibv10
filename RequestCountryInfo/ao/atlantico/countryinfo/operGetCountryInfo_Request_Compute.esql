@@ -1,0 +1,22 @@
+BROKER SCHEMA ao.atlantico.countryinfo
+DECLARE ns6 NAMESPACE 'http://www.oorsprong.org/websamples.countryinfo';
+DECLARE ns NAMESPACE 'http://RequestCountryInfo';
+
+
+CREATE COMPUTE MODULE operGetCountryInfo_Request_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		DECLARE countryCode CHARACTER;
+		
+		-- Usando o InputRoot:
+		--SET countryCode = InputRoot.XMLNSC.ns:operGetCountryInfo.inpCountryCode;
+		
+		-- Usando InputBody:
+		SET countryCode = UPPER(InputBody.ns:operGetCountryInfo.inpCountryCode);
+		
+		SET OutputRoot.XMLNSC.ns6:FullCountryInfo.ns6:sCountryISOCode = countryCode;
+		
+		RETURN TRUE;
+	END;
+END MODULE;

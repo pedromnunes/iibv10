@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="JudgeNumber" targetNamespace="http://JudgeNumber" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://JudgeNumber" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="JudgeNumberHttpBinding" originalBindingStyle="document"/>
+        <generatedXSD location="JudgeNumber_InlineSchema1.xsd"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  
+  <wsdl:types>
+    
+        <xsd:schema targetNamespace="http://JudgeNumber" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+      <xsd:include schemaLocation="JudgeNumber_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="IsParRequestMsg">
+    <wsdl:part element="tns:IsPar" name="IsParParameters"/>
+  </wsdl:message>
+  <wsdl:message name="IsParResponseMsg">
+    <wsdl:part element="tns:IsParResponse" name="IsParResult"/>
+  </wsdl:message>
+  <wsdl:portType name="JudgeNumber">
+    <wsdl:operation name="IsPar">
+      <wsdl:input message="tns:IsParRequestMsg" name="IsParRequest"/>
+      <wsdl:output message="tns:IsParResponseMsg" name="IsParResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="JudgeNumberHttpBinding" type="tns:JudgeNumber">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="IsPar">
+      <soap:operation soapAction="http://JudgeNumber/IsPar"/>
+      <wsdl:input name="IsParRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="IsParResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    </wsdl:binding>
+  <wsdl:service name="JudgeNumberHttpService">
+    <wsdl:port binding="tns:JudgeNumberHttpBinding" name="JudgeNumberHttpPort">
+      <soap:address location="http://localhost:7800/JudgeNumber"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

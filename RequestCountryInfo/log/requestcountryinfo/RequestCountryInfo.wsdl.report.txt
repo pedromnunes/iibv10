@@ -1,0 +1,13 @@
+
+
+Importing file: C:\Users\upn03008\IBM\IIBT10\workspace\RequestCountryInfo\RequestCountryInfo.wsdl
+
+The WSDL import will proceed with bindings RequestCountryInfoHttpBinding.
+Creating wsdl schema document for platform:/resource/RequestCountryInfo/RequestCountryInfo.wsdl.
+Parsing wsdl binding {http://RequestCountryInfo}RequestCountryInfoHttpBinding.
+Parsing wsdl binding input operGetCountryInfo.
+Parsing wsdl binding output operGetCountryInfo.
+Processing doc style for operation operGetCountryInfo.
+Populating WSDL schema RequestCountryInfo.xsd.
+Creating file RequestCountryInfo.xsd in the workspace.
+Copying source WSDL RequestCountryInfo.wsdl to RequestCountryInfo.wsdl.

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <input path="/JudgeNumber_InlineSchema1.xsd"/>
+    <output path="/JudgeNumber_InlineSchema1.xsd"/>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="IsPar_Request_Response_Mapping">
+        <input namespace="http://JudgeNumber" path="mb:msg(IsParResponse,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_IsParResponse"/>
+        <output namespace="http://JudgeNumber" path="mb:msg(IsParResponse,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_IsParResponse1"/>
+        <move>
+            <input path="$ComIbmMessageAssembly_IsParResponse/Properties"/>
+            <output path="$ComIbmMessageAssembly_IsParResponse1/Properties"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

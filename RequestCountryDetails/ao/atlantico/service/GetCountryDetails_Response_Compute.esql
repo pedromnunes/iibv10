@@ -1,0 +1,18 @@
+BROKER SCHEMA ao.atlantico.service
+
+
+
+
+CREATE COMPUTE MODULE GetCountryDetails_Response_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		DECLARE city CHARACTER '';
+		
+		SET city = InputRoot.SOAP.Body.ns158:CapitalCityResponse.ns158:CapitalCityResult;
+		
+		SET OutputRoot.XMLNSC.ns:GetCountryDetailsResponse.countryResponse.country.city = city;
+		
+		RETURN TRUE;
+	END;
+END MODULE;

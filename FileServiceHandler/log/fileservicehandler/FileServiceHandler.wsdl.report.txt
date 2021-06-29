@@ -1,0 +1,13 @@
+
+
+Importing file: C:\Users\upn03008\IBM\IIBT10\workspace\FileServiceHandler\FileServiceHandler.wsdl
+
+The WSDL import will proceed with bindings FileServiceHandlerHttpBinding.
+Creating wsdl schema document for platform:/resource/FileServiceHandler/FileServiceHandler.wsdl.
+Parsing wsdl binding {http://FileServiceHandler}FileServiceHandlerHttpBinding.
+Parsing wsdl binding input NovoCliente.
+Parsing wsdl binding output NovoCliente.
+Processing doc style for operation NovoCliente.
+Populating WSDL schema FileServiceHandler.xsd.
+Creating file FileServiceHandler.xsd in the workspace.
+Copying source WSDL FileServiceHandler.wsdl to FileServiceHandler.wsdl.

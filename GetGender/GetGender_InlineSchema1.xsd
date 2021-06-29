@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://GetGender" xmlns:tns="http://GetGender">
+    <xsd:include schemaLocation="GetGender.xsd"/>
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operGetGender">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="inpPerson" nillable="true" type="tns:Person"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="operGetGenderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="outMessage" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    <xsd:complexType name="Person">
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string"/>
+      <xsd:element name="age" type="xsd:string"/>
+      <xsd:element name="gender" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

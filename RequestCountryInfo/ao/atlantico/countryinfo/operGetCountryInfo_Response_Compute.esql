@@ -1,0 +1,27 @@
+BROKER SCHEMA ao.atlantico.countryinfo
+
+
+CREATE COMPUTE MODULE operGetCountryInfo_Response_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		DECLARE countryName CHARACTER '';
+		DECLARE ISOCode CHARACTER '';
+		DECLARE city CHARACTER '';
+		DECLARE message CHARACTER '';
+		
+		DECLARE refInput REFERENCE TO InputRoot.SOAP.Body.ns6:FullCountryInfoResponse.ns6:FullCountryInfoResult;
+		
+		-- Nota:
+		-- Usamos os SOAP em deterimento do parser XMLNSC quando usamos o response de uma API externa.
+		SET countryName = refInput.ns6:sName;
+		SET ISOCode = refInput.ns6:sISOCode;
+		SET city = refInput.ns6:sCapitalCity;
+		
+		SET message = ISOCode || ', corresponde ao pais ' || countryName || ' cuja capital é ' || city;
+	
+		SET OutputRoot.XMLNSC.ns:operGetCountryInfoResponse. outMessage = LOWER(message);
+		
+		RETURN TRUE;
+	END;
+END MODULE;

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="RequestCountryInfo" targetNamespace="http://RequestCountryInfo" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://RequestCountryInfo" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="RequestCountryInfoHttpBinding" originalBindingStyle="document"/>
+        <generatedXSD location="RequestCountryInfo_InlineSchema1.xsd"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  
+  <wsdl:types>
+    
+        <xsd:schema targetNamespace="http://RequestCountryInfo" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+      <xsd:include schemaLocation="RequestCountryInfo_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="operGetCountryInfoRequestMsg">
+    <wsdl:part element="tns:operGetCountryInfo" name="operGetCountryInfoParameters"/>
+  </wsdl:message>
+  <wsdl:message name="operGetCountryInfoResponseMsg">
+    <wsdl:part element="tns:operGetCountryInfoResponse" name="operGetCountryInfoResult"/>
+  </wsdl:message>
+  <wsdl:portType name="RequestCountryInfo">
+    <wsdl:operation name="operGetCountryInfo">
+            <wsdl:input message="tns:operGetCountryInfoRequestMsg" name="operGetCountryInfoRequest"/>
+            <wsdl:output message="tns:operGetCountryInfoResponseMsg" name="operGetCountryInfoResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RequestCountryInfoHttpBinding" type="tns:RequestCountryInfo">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="operGetCountryInfo">
+      <soap:operation soapAction="http://RequestCountryInfo/operGetCountryInfo"/>
+      <wsdl:input name="operGetCountryInfoRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="operGetCountryInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    </wsdl:binding>
+  <wsdl:service name="RequestCountryInfoHttpService">
+    <wsdl:port binding="tns:RequestCountryInfoHttpBinding" name="RequestCountryInfoHttpPort">
+      <soap:address location="http://localhost:7800/RequestCountryInfo"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

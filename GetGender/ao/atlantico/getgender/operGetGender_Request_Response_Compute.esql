@@ -1,0 +1,32 @@
+BROKER SCHEMA ao.atlantico.getgender
+DECLARE ns NAMESPACE 'http://GetGender';
+
+
+CREATE COMPUTE MODULE operGetGender_Request_Response_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE name CHARACTER;
+		DECLARE age INTEGER;
+		DECLARE gender CHARACTER;
+		DECLARE refPerson REFERENCE TO InputRoot.XMLNSC.ns:operGetGender.inpPerson;
+		
+		--DECLARE treatment CHARACTER;
+		
+		SET name = refPerson.name;
+		SET age = refPerson.age;
+		SET gender = refPerson.gender;
+		
+		CASE gender
+		WHEN 'M' THEN
+			SET OutputRoot.XMLNSC.ns:operGetGenderResponse.outMessage = name || ' é uma HOMEM!';
+		WHEN 'F' THEN
+			SET OutputRoot.XMLNSC.ns:operGetGenderResponse.outMessage = name || ' é uma MULHER!';
+		ELSE
+			SET OutputRoot.XMLNSC.ns:operGetGenderResponse.outMessage = 'Valor invalido, deve inserir M or F';
+		END CASE;
+		
+		
+		RETURN TRUE;
+	END;
+
+END MODULE;

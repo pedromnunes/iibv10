@@ -1,0 +1,13 @@
+
+
+Importing file: C:\Users\upn03008\IBM\IIBT10\workspace\JudgeNumber\JudgeNumber.wsdl
+
+The WSDL import will proceed with bindings JudgeNumberHttpBinding.
+Creating wsdl schema document for platform:/resource/JudgeNumber/JudgeNumber.wsdl.
+Parsing wsdl binding {http://JudgeNumber}JudgeNumberHttpBinding.
+Parsing wsdl binding input IsPar.
+Parsing wsdl binding output IsPar.
+Processing doc style for operation IsPar.
+Populating WSDL schema JudgeNumber.xsd.
+Creating file JudgeNumber.xsd in the workspace.
+Copying source WSDL JudgeNumber.wsdl to JudgeNumber.wsdl.

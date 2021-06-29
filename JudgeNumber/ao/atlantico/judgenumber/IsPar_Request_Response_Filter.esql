@@ -1,0 +1,19 @@
+BROKER SCHEMA ao.atlantico.judgenumber
+DECLARE ns NAMESPACE 'http://JudgeNumber';
+
+CREATE FILTER MODULE IsPar_Request_Response_Filter
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		DECLARE number INTEGER Root.XMLNSC.ns:IsPar.Number;
+		
+		IF number = 0 THEN
+			RETURN NULL;
+		ELSEIF MOD(number, 2) = 0 THEN
+			RETURN TRUE;
+		ELSE
+			RETURN FALSE;
+		END IF;
+	
+	END;
+END MODULE;

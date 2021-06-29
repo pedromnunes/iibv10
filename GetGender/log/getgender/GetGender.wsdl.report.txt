@@ -1,0 +1,14 @@
+
+
+Importing file: C:\Users\upn03008\IBM\IIBT10\workspace\GetGender\GetGender.wsdl
+
+The WSDL import will proceed with bindings GetGenderHttpBinding.
+Creating wsdl schema document for platform:/resource/GetGender/GetGender.wsdl.
+Parsing wsdl binding {http://GetGender}GetGenderHttpBinding.
+Parsing wsdl binding input operGetGender.
+Parsing wsdl binding output operGetGender.
+Processing doc style for operation operGetGender.
+Populating WSDL schema GetGender.xsd.
+Creating file GetGender.xsd in the workspace.
+Creating file GetGender_InlineSchema1.xsd in the workspace.
+Copying source WSDL GetGender.wsdl to GetGender.wsdl.
