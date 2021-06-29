@@ -1,0 +1,13 @@
+
+
+Importing file: C:\Users\upn03008\IBM\IIBT10\workspace\CallSOAPServiceWithJavaNode\CallSOAPServiceWithJavaNode.wsdl
+
+The WSDL import will proceed with bindings CallSOAPServiceWithJavaNodeHttpBinding.
+Creating wsdl schema document for platform:/resource/CallSOAPServiceWithJavaNode/CallSOAPServiceWithJavaNode.wsdl.
+Parsing wsdl binding {http://CallSOAPServiceWithJavaNode}CallSOAPServiceWithJavaNodeHttpBinding.
+Parsing wsdl binding input GetNumberToWord.
+Parsing wsdl binding output GetNumberToWord.
+Processing doc style for operation GetNumberToWord.
+Populating WSDL schema CallSOAPServiceWithJavaNode.xsd.
+Creating file CallSOAPServiceWithJavaNode.xsd in the workspace.
+Copying source WSDL CallSOAPServiceWithJavaNode.wsdl to CallSOAPServiceWithJavaNode.wsdl.

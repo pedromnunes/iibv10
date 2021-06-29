@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="CallSOAPServiceWithJavaNode" targetNamespace="http://CallSOAPServiceWithJavaNode" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://CallSOAPServiceWithJavaNode" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="CallSOAPServiceWithJavaNodeHttpBinding" originalBindingStyle="document"/>
+        <generatedXSD location="CallSOAPServiceWithJavaNode_InlineSchema1.xsd"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  
+  <wsdl:types>
+    
+        <xsd:schema targetNamespace="http://CallSOAPServiceWithJavaNode" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+      <xsd:include schemaLocation="CallSOAPServiceWithJavaNode_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="GetNumberToWordRequestMsg">
+    <wsdl:part element="tns:GetNumberToWord" name="GetNumberToWordParameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetNumberToWordResponseMsg">
+    <wsdl:part element="tns:GetNumberToWordResponse" name="GetNumberToWordResult"/>
+  </wsdl:message>
+  <wsdl:portType name="CallSOAPServiceWithJavaNode">
+    <wsdl:operation name="GetNumberToWord">
+      <wsdl:input message="tns:GetNumberToWordRequestMsg" name="GetNumberToWordRequest"/>
+      <wsdl:output message="tns:GetNumberToWordResponseMsg" name="GetNumberToWordResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CallSOAPServiceWithJavaNodeHttpBinding" type="tns:CallSOAPServiceWithJavaNode">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetNumberToWord">
+      <soap:operation soapAction="http://CallSOAPServiceWithJavaNode/GetNumberToWord"/>
+      <wsdl:input name="GetNumberToWordRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetNumberToWordResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    </wsdl:binding>
+  <wsdl:service name="CallSOAPServiceWithJavaNodeHttpService">
+    <wsdl:port binding="tns:CallSOAPServiceWithJavaNodeHttpBinding" name="CallSOAPServiceWithJavaNodeHttpPort">
+      <soap:address location="http://localhost:7800/CallSOAPServiceWithJavaNode"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

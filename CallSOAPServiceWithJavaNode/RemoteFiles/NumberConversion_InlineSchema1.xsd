@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.dataaccess.com/webservicesserver/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.dataaccess.com/webservicesserver/">
+      <xsd:element ibmSchExtn:docRoot="true" name="NumberToWords">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ubiNum" type="xsd:unsignedLong"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="NumberToWordsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="NumberToWordsResult" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="NumberToDollars">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="dNum" type="xsd:decimal"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="NumberToDollarsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="NumberToDollarsResult" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>

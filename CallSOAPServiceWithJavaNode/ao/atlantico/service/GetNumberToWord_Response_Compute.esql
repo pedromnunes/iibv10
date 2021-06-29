@@ -1,0 +1,14 @@
+BROKER SCHEMA ao.atlantico.service
+DECLARE ns7 NAMESPACE 'http://CallSOAPServiceWithJavaNode';
+DECLARE ns NAMESPACE 'http://www.dataaccess.com/webservicesserver/';
+
+
+CREATE COMPUTE MODULE GetNumberToWord_Response_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+	
+		DECLARE resultInWord CHARACTER InputRoot.SOAP.Body.ns:NumberToWordsResponse.ns:NumberToWordsResult;
+		SET OutputRoot.XMLNSC.ns7:GetNumberToWordResponse.output = resultInWord;
+		RETURN TRUE;
+	END;
+END MODULE;

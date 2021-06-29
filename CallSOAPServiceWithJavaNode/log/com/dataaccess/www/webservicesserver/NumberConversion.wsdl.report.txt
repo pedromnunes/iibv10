@@ -1,0 +1,25 @@
+
+
+Importing file: \webservicesserver\NumberConversion.wsdl
+
+The WSDL import will proceed with bindings NumberConversionSoapBinding.
+Creating wsdl schema document for RemoteFiles/NumberConversion.xsd.
+Parsing wsdl binding {http://www.dataaccess.com/webservicesserver/}NumberConversionSoapBinding.
+Parsing wsdl binding input NumberToWords.
+Parsing wsdl binding output NumberToWords.
+Parsing wsdl binding input NumberToDollars.
+Parsing wsdl binding output NumberToDollars.
+Processing doc style for operation NumberToWords.
+Processing doc style for operation NumberToDollars.
+Populating WSDL schema RemoteFiles/NumberConversion.xsd.
+Creating file RemoteFiles/NumberConversion.xsd in the workspace.
+Creating file RemoteFiles/NumberConversion_InlineSchema1.xsd in the workspace.
+Copying source WSDL NumberConversion.wso?wsdl to NumberConversion.wsdl.
+
+Elapsed time processing this message definition file: 0.265 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+
